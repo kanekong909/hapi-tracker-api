@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import pg from 'pg';
 import { PrismaPg } from '@prisma/adapter-pg';
-import { PrismaClient } from '@prisma/client';
+const { PrismaClient } = require('@prisma/client');
 
 const app = express();
 
