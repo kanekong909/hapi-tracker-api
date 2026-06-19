@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Trade {
+  id          String   @id @default(uuid())
+  type        String   
+  ticker      String   
+  assetName   String   
+  amountValue Float    
+  tradeDate   DateTime 
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+}
+
+model CashFlow {
+  id          String   @id @default(uuid())
+  type        String   // "DEPOSITO" o "RETIRO"
+  amountValue Float    // El monto del movimiento
+  date        DateTime // Fecha del movimiento
+  method      String?  // Ej: "Transferencia", "Binance", "Tarjeta"
+  ticker      String?
+  createdAt   DateTime @default(now())
+}
