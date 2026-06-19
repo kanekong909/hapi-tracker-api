@@ -23,6 +23,10 @@ app.use(cors({
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('API de Hapi Tracker funcionando correctamente');
+});
+
 // ============ OBTENER TRANSACCIONES ============
 app.get('/api/trades', async (req, res) => {
   try {
