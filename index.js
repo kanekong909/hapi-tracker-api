@@ -2,9 +2,11 @@ import express from 'express';
 import cors from 'cors';
 import pg from 'pg';
 import { PrismaPg } from '@prisma/adapter-pg';
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
+import dotenv from 'dotenv';
 
 const app = express();
+dotenv.config();
 
 // Configurar el pool de conexiones nativo de PostgreSQL
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
